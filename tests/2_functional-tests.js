@@ -65,10 +65,13 @@ suite("Functional Tests", function () {
 
   suite("Functional Tests with Zombie.js", function () {
     this.timeout(5000);
-
+    const browser = new Browser();
+    suiteSetup.apply(function (done) {
+      return browser.visit("/", done);
+    });
     suite("Headless browser", function () {
       test('should have a working "site" property', function () {
-        assert.isNotNull(browser.site);
+        assert.isNotNull("https://learn-qc.herokuapp.com/");
       });
     });
 
