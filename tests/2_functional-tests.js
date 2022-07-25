@@ -62,7 +62,7 @@ suite("Functional Tests", function () {
   });
 
   const Browser = require("zombie");
-  // Browser.site = "https://learn-qc.herokuapp.com/";
+  Browser.site = "https://learn-qc.herokuapp.com/";
 
   suite("Functional Tests with Zombie.js", function () {
     const browser = new Browser();
