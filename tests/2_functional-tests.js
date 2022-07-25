@@ -62,16 +62,17 @@ suite("Functional Tests", function () {
   });
 
   const Browser = require("zombie");
-
+  Browser.site = "https://learn-qc.herokuapp.com/";
+  const browser = new Browser();
   suite("Functional Tests with Zombie.js", function () {
     this.timeout(5000);
-    const browser = new Browser();
+
     suiteSetup.apply(function (done) {
       return browser.visit("/", done);
     });
     suite("Headless browser", function () {
       test('should have a working "site" property', function () {
-        assert.isNotNull("https://learn-qc.herokuapp.com/");
+        assert.isNotNull(browser.site);
       });
     });
 
