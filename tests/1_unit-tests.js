@@ -138,7 +138,7 @@ suite("Unit Tests", function () {
         process.env.PATH,
         "An env variable is a string (or undefined)"
       );
-      assert.fail(JSON.stringify({ type: "object" }), "JSON is a string");
+      assert.isString(JSON.stringify({ type: "object" }), "JSON is a string");
     });
     // #14
     test("String #include, #notInclude", function () {
